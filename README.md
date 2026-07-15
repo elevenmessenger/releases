@@ -97,7 +97,12 @@ share nothing.
   removal never destroys data.
 - **Hardening**: the units are already sandboxed; for the box itself, a
   firewall (22/80/443), key-only SSH, and unattended OS upgrades are the
-  standard trio.
+  standard trio. Going further is optional: our own fleet closes public
+  port 22 entirely — SSH rides a WireGuard tunnel (invisible to scanners),
+  root login is disabled after first setup, and day-to-day admin runs
+  through named accounts with a committed sudo allowlist. The full recipe,
+  including the break-glass path via your provider's rescue console, is in
+  `docs/instance-router.md § Hardening` in the main repo.
 
 ## Scaling up (optional)
 
